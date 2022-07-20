@@ -19,21 +19,21 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     continent: {
-      type: DataTypes.ENUM('Africa', 'America', 'Asia', 'Europe', 'Oceania', 'All'),
-      defaultValue: 'All',
+      type: DataTypes.STRING,
       allowNull: false
     },
     capital: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue : 'No capital found'
     },
     subregion: {
       type: DataTypes.STRING
     },
     area: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.INTEGER,
       get() {
-        return this.getDataValue('area') + ' million KM2';
+        return this.getDataValue('area') + ' KM2';
       }
     },
     population: {
