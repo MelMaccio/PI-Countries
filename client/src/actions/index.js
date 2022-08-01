@@ -15,7 +15,7 @@ export const ORDER_BY_POPULATION = "ORDER_BY_POPULATION";
 
 export function getCountries() {
     return function (dispatch) {
-        return fetch("http://localhost:3001/api/countries")
+        return fetch(`${process.env.REACT_APP_API}/api/countries`)
          .then((response) => response.json())
          .then((json) => dispatch({ type: GET_ALL_COUNTRIES, payload: json }))
     }
@@ -23,7 +23,7 @@ export function getCountries() {
 
 export function getActivities(){
     return function (dispatch) {
-        return fetch("http://localhost:3001/api/activities")
+        return fetch(`${process.env.REACT_APP_API}/api/activities`)
          .then((response) => response.json())
          .then((json) => dispatch({ type: GET_ALL_ACTIVITIES, payload: json }))
     }
@@ -31,7 +31,7 @@ export function getActivities(){
 
 export function getNameCountry(name){
     return function (dispatch) {
-        return fetch("http://localhost:3001/api/countries?name=" + name)
+        return fetch(`${process.env.REACT_APP_API}/api/countries?name=` + name)
          .then((response) => response.json())
          .then((json) => dispatch({ type: GET_COUNTRY_NAME , payload: json }))
     }
@@ -39,7 +39,7 @@ export function getNameCountry(name){
 
 export function getCountryDetail(id){
     return function (dispatch) {
-        return fetch("http://localhost:3001/api/countries/" + id)
+        return fetch(`${process.env.REACT_APP_API}/api/countries/` + id)
          .then((response) => response.json())
          .then((json) => dispatch({ type: GET_COUNTRY_DETAIL, payload: json }))
     }
