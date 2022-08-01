@@ -1,0 +1,17 @@
+.nav {
+    font-size: 30px;
+    width: 60%;
+    justify-content: space-around;
+    display: flex;
+}
+
+.link{
+    text-decoration: none;
+    color: #E7F6F2;
+}
+
+.link:hover{
+    color: rgba(199, 209, 52, 0.836);
+    transition: 0.2s;
+}
+

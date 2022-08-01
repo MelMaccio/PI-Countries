@@ -1,0 +1,27 @@
+.pagContainer{
+    height: 35px;
+    padding: 5px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.numbers{
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color:#E7F6F2;
+    text-decoration: none; 
+    opacity: 0.3;
+}
+
+.numbers + .numbers {
+    margin-left: 10px;
+}
+
+.numbers:hover{
+    opacity: 1;
+    transition: 0.5s;
+}
+

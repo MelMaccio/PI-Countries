@@ -1,0 +1,28 @@
+.sbContainer{
+    width: 50%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+}
+.input{
+    width: 40%;
+    border-radius: 10px;
+    margin-right: 5px;
+    background-color: rgba(255, 255, 240, 0.288);
+    color: #E7F6F2;
+    font-size: 25px;
+    outline: none;
+}
+
+.button{
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255, 255, 240, 0.404);
+    color: #E7F6F2;
+    font-size: 25px;
+}
+
+.button:hover{
+    background-color: rgba(180, 190, 33, 0.651);
+    transition: 0.2s;
+}

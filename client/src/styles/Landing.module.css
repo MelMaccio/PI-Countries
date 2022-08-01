@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.bkg{
+    height: 100vh;
+    background-image: url("../img/fondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bkg > h1 {
+    font-size: 100px;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 50px;
+    color: rgba(255, 255, 240, 0.63);
+}
+
+.NavLink {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    padding-top: 10%;
+}
+
+.button {
+    width: 30vw;
+    height: 20vh;
+    border: none;
+    border-radius: 50px;
+    font-size: 50px;
+    background-color: grey;
+    color: ivory;
+    opacity: 0.6;
+    transition: 0.5s ease;
+}
+
+.button:hover{
+    transform: scale(1.4);
+    opacity: 1;
+}

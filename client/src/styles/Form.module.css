@@ -1,0 +1,116 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #2c3333fb;
+}
+
+.container > h1{
+    padding: 20px;
+    font-size: 50px;
+    text-align: center;
+    background-color: rgba(153, 153, 150, 0.144);
+    color: #E7F6F2;
+}
+
+.navBar {
+    background-color: #191919;
+    border: 0px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #4c4c48;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 10px;
+}
+
+.form {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 30px;
+    color: #E7F6F2;
+}
+
+.button {
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 240, 0.404);
+    color: #E7F6F2;
+    font-size: 30px;
+    width: 120px;
+    height: 40px;
+}
+
+.button:hover , select:hover {
+    background-color: rgba(180, 190, 33, 0.651);
+    transition: 0.2s;
+}
+
+.selection{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.selection > div {
+    margin-left: 30px;
+    font-size: 30px;
+}
+
+.delete {
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 240, 0.404);
+    color: #E7F6F2;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+select {
+    height: 35px;
+    width: 200px;
+    font-size: 18px;
+    color: #e7f6f2b4;
+    padding: 2px;
+    margin: 2px;
+    border:none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 240, 0.288);
+    outline: none;
+}
+
+select > option {
+    color: #191919cb;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.nameInput{
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    margin-right: 5px;
+    background-color: rgba(255, 255, 240, 0.288);
+    color: #E7F6F2;
+    font-size: 25px;
+    outline: none;
+}
+
+input {
+    width: 20px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.error{
+    font-size: 20px;
+    color: rgb(185, 236, 97);
+    text-align: center;
+}
+
+
