@@ -10,37 +10,42 @@ import NavBar from "./NavBar";
 
 
 function Home() {
-
    const dispatch = useDispatch()
-   const allCountries = useSelector((state) => state.countries) //es lo mismo que hacer el mapstatetoprops con hooks
+   const allCountries = useSelector((state) => state.countries) 
    const activities = useSelector((state) => state.activities)
    const [currentPage, setCurrentPage] = useState(1)
    const [countriesPerPage, setCountriesPerPage] = useState(9)
+   const [currentCountries, setCurrentCountries] = useState([])
    const [order, setOrder] = useState('')
-   const indexOfLastCountry = currentPage * countriesPerPage
-   const indexOffFirstCountry = indexOfLastCountry - countriesPerPage
-   const currentCountries = allCountries.slice(indexOffFirstCountry, indexOfLastCountry)
+   
 
-   function paginado(pageNumber) {
+   function paginado(pageNumber) {          
       if (pageNumber === 1) {
-         setCountriesPerPage(9)
+         let start = 0
+         let end = 9 
+         setCurrentCountries(allCountries.slice(start, end))
       } else {
-         setCountriesPerPage(12)
+         let start = ((pageNumber - 2) * 12) + 9
+         let end =  start + 12
+         setCurrentCountries(allCountries.slice(start, end))
       }
 
       setCurrentPage(pageNumber)
    }
 
    useEffect(() => {
-      dispatch(getCountries())  //es lo mimos hacer el mapdispatchtoprops con hooks
-   }, [dispatch])               //no depende de nada asi que no le paso nada
+      dispatch(getCountries())
+      dispatch(getActivities()) 
+   }, [dispatch])               
 
+   
    useEffect(() => {
-      dispatch(getActivities())
-   }, [dispatch])
+      paginado(1)
+   }, [allCountries])
 
-   function handleOnClick(e) {   //me vuelve a cargar todos los countries, si por ej
-      e.preventDefault()        //tengo filtros aplicados
+
+   function handleOnClick(e) {   
+      e.preventDefault()        
       dispatch(getCountries())
       paginado(1)
    }
@@ -59,6 +64,7 @@ function Home() {
       e.preventDefault()
       dispatch(orderByName(e.target.value))
       setCurrentPage(1)
+      paginado(1)
       setOrder(`Ordered ${e.target.value}`)
       e.target.value = ''
    }

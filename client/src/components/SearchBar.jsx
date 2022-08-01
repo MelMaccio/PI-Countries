@@ -21,6 +21,7 @@ function SearchBar() {
     return ( 
         <div className={styles.sbContainer}>
             <input 
+              value={name}
               className={styles.input}
               type="text"
               placeholder="Search..."

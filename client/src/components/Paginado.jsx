@@ -8,10 +8,10 @@ function Paginado({ allCountries, countriesPerPage, paginado }) {
 
     pageNumbers.push(1)
 
-    for (let i = 2; i < Math.ceil(countriesAfter1 / 10); i++) {
+    for (let i = 2; i < Math.ceil(countriesAfter1 / 12); i++) {
         pageNumbers.push(i)
     }
-
+ 
     return (
         <nav className={styles.pagContainer}>         
             <div>
