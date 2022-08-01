@@ -27,7 +27,7 @@ const port = process.env.PORT || 3001;
 if (process.env.NODE_ENV === 'development') {
   conn.sync({ force: true }).then(() => {
     apiInfo().then(() => {
-      server.listen(3001, () => {
+      server.listen(port, () => {
         console.log('%s listening at 3001'); // eslint-disable-line no-console
       });
     })
