@@ -13,14 +13,17 @@ router.get('/', async (req, res) => {
                         name : {
                             [Op.iLike] : '%' + name + '%'
                         }
-                    }
+                    },
+                    include: Activity
                });
                res.json(countries.length ? countries : "Not found")
             } catch (error) {
                res.status(404).send(error)
             }
         }else{
-            const countries = await Country.findAll(req.query);
+            const countries = await Country.findAll({
+                include: Activity
+            });
             res.status(200).json(countries)
         }
     } catch (error) {
