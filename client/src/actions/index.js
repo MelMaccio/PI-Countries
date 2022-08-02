@@ -47,7 +47,7 @@ export function getCountryDetail(id){
 
 export function postActivity(payload){
     return async function(dispatch){
-       const response = axios.post("http://localhost:3001/api/activities", payload)
+       const response = axios.post(`${process.env.REACT_APP_API}/api/activities`, payload)
        return response;
     }
 }
