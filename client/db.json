@@ -1,0 +1,59 @@
+{
+    "countries": [
+        {
+            "area": "7747 KM2",
+            "population": "400 people",
+            "id": "ATF",
+            "name": "French Southern and Antarctic Lands",
+            "flag": "https://flagcdn.com/tf.svg",
+            "continent": "Antarctica",
+            "capital": "Port-aux-Français",
+            "subregion": null,
+            "activities": []
+        },
+        {
+            "area": "1141748 KM2",
+            "population": "50882884 people",
+            "id": "COL",
+            "name": "Colombia",
+            "flag": "https://flagcdn.com/co.svg",
+            "continent": "South America",
+            "capital": "Bogotá",
+            "subregion": "South America",
+            "activities": []
+        },
+        {
+            "area": "916445 KM2",
+            "population": "28435943 people",
+            "id": "VEN",
+            "name": "Venezuela",
+            "flag": "https://flagcdn.com/ve.svg",
+            "continent": "South America",
+            "capital": "Caracas",
+            "subregion": "South America",
+            "activities": []
+        },
+        {
+            "area": "143100 KM2",
+            "population": "9537642 people",
+            "id": "TJK",
+            "name": "Tajikistan",
+            "flag": "https://flagcdn.com/tj.svg",
+            "continent": "Asia",
+            "capital": "Dushanbe",
+            "subregion": "Central Asia",
+            "activities": []
+        },
+        {
+            "area": "438317 KM2",
+            "population": "40222503 people",
+            "id": "IRQ",
+            "name": "Iraq",
+            "flag": "https://flagcdn.com/iq.svg",
+            "continent": "Asia",
+            "capital": "Baghdad",
+            "subregion": "Western Asia",
+            "activities": []
+        }
+    ]
+}
