@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/Paginado.module.css";
 
-function Paginado({ allCountries, countriesPerPage, paginado }) {
+function Paginado({ allCountries, paginado }) {
     
     const pageNumbers = [];
     const countriesAfter1 = allCountries - 9

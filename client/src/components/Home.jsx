@@ -13,10 +13,8 @@ function Home() {
    const dispatch = useDispatch()
    const allCountries = useSelector((state) => state.countries) 
    const activities = useSelector((state) => state.activities)
-   const [currentPage, setCurrentPage] = useState(1)
-   const [countriesPerPage, setCountriesPerPage] = useState(9)
    const [currentCountries, setCurrentCountries] = useState([])
-   const [order, setOrder] = useState('')
+
    
 
    function paginado(pageNumber) {          
@@ -29,8 +27,6 @@ function Home() {
          let end =  start + 12
          setCurrentCountries(allCountries.slice(start, end))
       }
-
-      setCurrentPage(pageNumber)
    }
 
    useEffect(() => {
@@ -41,13 +37,12 @@ function Home() {
    
    useEffect(() => {
       paginado(1)
-   }, [allCountries])
+   },[allCountries])
 
 
    function handleOnClick(e) {   
       e.preventDefault()        
       dispatch(getCountries())
-      paginado(1)
    }
 
    function handleFilterContinent(e) {
@@ -63,17 +58,12 @@ function Home() {
    function handleAlphOrder(e) {
       e.preventDefault()
       dispatch(orderByName(e.target.value))
-      setCurrentPage(1)
-      paginado(1)
-      setOrder(`Ordered ${e.target.value}`)
       e.target.value = ''
    }
 
    function handlePopOrder(e) {
       e.preventDefault()
       dispatch(orderByPopulation(e.target.value))
-      setCurrentPage(1)
-      setOrder(`Ordered ${e.target.value}`)
       e.target.value = ''
    }
 
@@ -113,7 +103,6 @@ function Home() {
          </div>
          <Paginado
             allCountries={allCountries.length}
-            countriesPerPage={countriesPerPage}
             paginado={paginado}
          />
          <div className={styles.countries}>
@@ -125,7 +114,9 @@ function Home() {
                   continent={el.continent}
                   id={el.id}
                />
-            ))}
+            )) 
+            }
+            {currentCountries.length === 0 && <p>"Country not found"</p>}
          </div>
       </div>
    );

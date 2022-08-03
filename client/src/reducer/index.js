@@ -62,8 +62,9 @@ function rootReducer(state = initialState, action) {
             }
         }
         case ORDER_BY_NAME: {
+            let countries = [...state.countries]
             let sorted = action.payload === "az" ?
-                state.countries.sort(function (a, b) {
+                countries.sort(function (a, b) {
                     if (a.name > b.name) {
                         return 1;
                     }
@@ -72,7 +73,7 @@ function rootReducer(state = initialState, action) {
                     }
                     return 0;
                 }) :
-                state.countries.sort(function (a, b) {
+                countries.sort(function (a, b) {
                     if (a.name > b.name) {
                         return -1;
                     }
@@ -87,8 +88,9 @@ function rootReducer(state = initialState, action) {
             }
         }
         case ORDER_BY_POPULATION: {
+            let countries = [...state.countries]
             let sortedArray = action.payload === "asc" ?
-                state.countries.sort(function (a, b) {
+                countries.sort(function (a, b) {
                     if (a.population > b.population) {
                         return 1;
                     }
@@ -97,7 +99,7 @@ function rootReducer(state = initialState, action) {
                     }
                     return 0;
                 }) :
-                state.countries.sort(function (a, b) {
+                countries.sort(function (a, b) {
                     if (a.population > b.population) {
                         return -1;
                     }
