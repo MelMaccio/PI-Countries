@@ -4,7 +4,7 @@ const { Country, Activity, Op} = require('../db')
 
 router.get('/', async (req, res) => {
     const name = req.query.name
-   // const filter = req.query.filter
+
     try {
         if(name){
             try {
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
                     },
                     include: Activity
                });
-               res.json(countries.length ? countries : "Not found")
+               res.json(countries)
             } catch (error) {
                res.status(404).send(error)
             }
